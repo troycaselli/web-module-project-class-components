@@ -20,12 +20,13 @@ export default class App extends React.Component {
   }
 
   addItem = (evt, item) => {
-    evt.preventDefault();
     const newTodo = {
       name: item,
       id: Date.now(),
       completed: false
     }
+    console.log(newTodo);
+    this.setState({...this.state, todoList: [...this.state.todoList, newTodo]});
   }
 
   render() {
