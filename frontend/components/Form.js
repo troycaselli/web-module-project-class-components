@@ -17,8 +17,10 @@ export default class Form extends React.Component {
 
   submit = evt => {
     evt.preventDefault();
-    this.props.addItem(evt, this.state.todo);
-    this.setState({...this.state, todo: ''});
+    if(this.state.todo !== '') {
+      this.props.addItem(evt, this.state.todo);
+      this.setState({...this.state, todo: ''});
+    }
   }
 
   render() {
@@ -28,7 +30,7 @@ export default class Form extends React.Component {
         <button type='submit' onKeyDown={this.props.submit}>Add</button>
         <br />
         <br />
-        <button >Hide Completed</button>
+        <button onClick={this.props.filterList}>Hide Completed</button>
       </form>
     )
   }

@@ -40,12 +40,17 @@ export default class App extends React.Component {
     console.log(this.state);
   }
 
+  filterList = () => {
+
+  }
+
   render() {
     return (
       <div>
         <TodoList todoList={this.state.todoList} toggleStrike={this.toggleStrike}/>
         <Form 
-          addItem={this.addItem} />
+          addItem={this.addItem} 
+          filterList={this.filterList}/>
       </div>
     )
   }
