@@ -1,10 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 export default class Todo extends React.Component {
+
+
+
   render() {
     return (
       <div>
-        Todo
+        <p>{this.props.item.name}</p>
       </div>
     )
   }
