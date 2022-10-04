@@ -20,7 +20,7 @@ export default class App extends React.Component {
     }
   }
 
-  addItem = (evt, item) => {
+  addItem = item => {
     const newTodo = {
       name: item,
       id: Date.now(),
@@ -31,7 +31,6 @@ export default class App extends React.Component {
   }
 
   toggleStrike = id => {
-    console.log(id);
     this.setState({...this.state, todoList: this.state.todoList.map(todo => {
       if(todo.id === id) {
         return {...todo, completed: !todo.completed}

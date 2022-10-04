@@ -9,7 +9,6 @@ export default class Form extends React.Component {
     })
   }
 
-
   updateNewTodo = evt => {
     this.setState({...this.state, todo: evt.target.value})
     console.log(this.state.todo);
@@ -18,7 +17,7 @@ export default class Form extends React.Component {
   submit = evt => {
     evt.preventDefault();
     if(this.state.todo !== '') {
-      this.props.addItem(evt, this.state.todo);
+      this.props.addItem(this.state.todo);
       this.setState({...this.state, todo: ''});
     }
   }
