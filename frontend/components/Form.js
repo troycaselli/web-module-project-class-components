@@ -18,13 +18,14 @@ export default class Form extends React.Component {
   submit = evt => {
     evt.preventDefault();
     this.props.addItem(evt, this.state.todo);
+    this.setState({...this.state, todo: ''});
   }
 
   render() {
     return (
       <form onSubmit={this.submit}>
         <input type='text' placeholder='new todo' value={this.state.todo} onChange={this.updateNewTodo}/>
-        <button type='submit' onKeyDown={this.props.addItem}>Add</button>
+        <button type='submit' onKeyDown={this.props.submit}>Add</button>
         <br />
         <br />
         <button >Hide Completed</button>
