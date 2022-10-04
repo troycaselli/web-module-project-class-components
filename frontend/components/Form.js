@@ -30,7 +30,7 @@ export default class Form extends React.Component {
         <button type='submit' onKeyDown={this.props.submit}>Add</button>
         <br />
         <br />
-        <button onClick={this.props.filterList}>Hide Completed</button>
+        <button onClick={() => this.props.toggleButtonName()}>{this.props.hideOn ? 'Show Completed' : 'Hide Completed'}</button>
       </form>
     )
   }

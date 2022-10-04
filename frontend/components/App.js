@@ -15,7 +15,8 @@ export default class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todoList: todoList
+      todoList: todoList,
+      hideOn: false
     }
   }
 
@@ -40,17 +41,23 @@ export default class App extends React.Component {
     console.log(this.state);
   }
 
-  filterList = () => {
-
+  toggleButtonName = () => {
+    if(this.state.todoList.find(todo => todo.completed === true)) {
+      this.setState({...this.state, hideOn: !this.state.hideOn});
+    }
   }
 
   render() {
     return (
       <div>
-        <TodoList todoList={this.state.todoList} toggleStrike={this.toggleStrike}/>
+        <TodoList 
+          todoList={this.state.todoList} 
+          toggleStrike={this.toggleStrike}
+          hideOn={this.state.hideOn}/>
         <Form 
-          addItem={this.addItem} 
-          filterList={this.filterList}/>
+          addItem={this.addItem}
+          toggleButtonName={this.toggleButtonName}
+          hideOn={this.state.hideOn}/>
       </div>
     )
   }

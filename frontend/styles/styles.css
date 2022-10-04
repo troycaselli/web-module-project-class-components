@@ -87,3 +87,7 @@ ul, form {
 .strikethrough {
   text-decoration: line-through;
 }
+
+.hide {
+  display: none;
+}

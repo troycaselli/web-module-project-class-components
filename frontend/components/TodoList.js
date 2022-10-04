@@ -13,7 +13,8 @@ export default class TodoList extends React.Component {
           return <Todo 
             key={item.id}
             item={item}
-            toggleStrike={this.props.toggleStrike}/>;
+            toggleStrike={this.props.toggleStrike}
+            hideOn={this.props.hideOn}/>;
         })}
       </div>
     )
